@@ -1,6 +1,7 @@
 import { getDocumentContent, getDocuments } from '@/lib/doc';
 import Link from 'next/link';
 import React from 'react';
+import Tag from './Tag';
 
 const ContentDisplay = async ({ id }) => {
 
@@ -20,8 +21,15 @@ const ContentDisplay = async ({ id }) => {
                     {content.category}
                 </Link>{" "}
                 category.
-                
             </div>
+            <div>
+                {content.tags &&
+                    content.tags.map((tag) => <Tag key={tag} tag={tag} />)}
+            </div>
+
+            <div
+            className='lead'
+            dangerouslySetInnerHTML={{__html: content.contentHtml}}/>
 
         </article>
     );
