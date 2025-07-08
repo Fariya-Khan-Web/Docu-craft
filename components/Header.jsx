@@ -4,7 +4,7 @@ import Search from './Search';
 import Image from 'next/image';
 import Sidebar from './Sidebar';
 
-const Header = () => {
+const Header = ({docs}) => {
     return (
         <header
             className="fixed inset-y-0 left-0 z-40 contents w-72 overflow-y-auto border-r border-zinc-900/10 px-6 pb-8 pt-4 dark:border-white/10 lg:block xl:w-80"
@@ -22,7 +22,7 @@ const Header = () => {
 
                     <div className="absolute inset-x-0 top-full h-px bg-zinc-900/7.5 transition dark:bg-white/7.5"></div>
 
-                    {/* <Search /> */}
+                    <Search />
 
                     {/* <!-- Mobile Responsive Header Starts --> */}
                     <div className="flex items-center gap-5 lg:hidden">
@@ -74,7 +74,7 @@ const Header = () => {
 
 
             {/* <!-- sidebar nav --> */}
-            <Sidebar/>
+            <Sidebar docs={docs}/>
             {/* <!-- Sidebar nav ends --> */}
         </header>
     );

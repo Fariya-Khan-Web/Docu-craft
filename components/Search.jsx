@@ -22,7 +22,7 @@ const Search = () => {
                 >
             </button>
             {/* <!-- result card --> */}
-            <div
+            {/* <div
                 className="absolute left-0 top-12 z-[999] w-full rounded-md bg-white p-4 shadow"
             >
                 <p className="!text-lg">
@@ -51,7 +51,7 @@ const Search = () => {
                         >
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     );
 };
