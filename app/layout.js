@@ -32,12 +32,12 @@ export default function RootLayout({ children }) {
       >
         <div className="h-full lg:ml-72 xl:ml-80">
 
-          <Header docs={allDocuments}/>
+          <Header docs={allDocuments} />
 
           <div class="relative px-4 pt-14 sm:px-6 lg:px-8">
-
-            {children}
-
+            <main class="flex-auto py-16">
+              {children}
+            </main>
           </div>
 
           <Footer />
