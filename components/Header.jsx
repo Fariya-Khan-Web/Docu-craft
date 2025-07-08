@@ -14,8 +14,8 @@ const Header = ({docs}) => {
 
             {/* <!-- Header --> */}
             <div
-                className="fixed inset-x-0 top-0 z-50 bg-white bg-white/[var(--bg-opacity-light)] px-4 backdrop-blur-sm transition dark:bg-[#17181C] dark:backdrop-blur sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80"
-                // style="--bg-opacity-light: 0.5; --bg-opacity-dark: 0.2"
+                className="fixed inset-x-0 top-0 z-50 bg-white bg-white/[0.5] px-4 backdrop-blur-sm transition dark:bg-[#17181C] dark:backdrop-blur sm:px-6 lg:left-72 lg:z-30 lg:px-8 xl:left-80"
+                // style={"--bg-opacity-light: 0.5; --bg-opacity-dark: 0.2"}
             >
                 <div className="container flex h-14 items-center justify-between gap-12">
 

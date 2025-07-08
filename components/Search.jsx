@@ -3,12 +3,12 @@ import React from 'react';
 
 const Search = () => {
     return (
-        <div className="relative hidden lg:block lg:max-w-md lg:flex-auto">
+        <div className="relative hidden lg:block lg:max-w-md lg:flex-auto ">
             <button
                 type="button"
                 className="focus:[&amp;:not(:focus-visible)]:outline-none hidden h-8 w-full items-center gap-2 rounded-full bg-white pl-2 pr-3 text-sm text-zinc-500 ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 dark:bg-white/5 dark:text-zinc-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20 lg:flex"
             >
-                <Image src="./assets/icons/search.svg" alt='search-icon' className="h-5 w-5" width={10} height={10}/>
+                <Image src="/search.svg" alt='search-icon' className="h-5 w-5" width={10} height={10}/>
                 <input
                     type="text"
                     placeholder="Search..."
