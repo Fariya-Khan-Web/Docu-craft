@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
           <Header docs={allDocuments} />
 
           <div class="relative px-4 pt-14 sm:px-6 lg:px-8">
-            <main class="flex-auto py-16">
+            <main class="flex-auto py-16 min-h-[calc(100vh-140px)]">
               {children}
             </main>
           </div>
