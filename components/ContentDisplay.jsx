@@ -6,14 +6,13 @@ import Tag from './Tag';
 const ContentDisplay = async ({ id }) => {
 
     const content = await getDocumentContent(id)
-    console.log({ content })
 
     return (
         <article className="prose dark:prose-invert">
             <h1>{content.title}</h1>
             <div>
                 <span>Published On: {content.date}</span> by {" "}
-                <Link href={`/author/${content.author}`}>
+                <Link href={`/author/${content.author.split(' ').join('-')}`}>
                     {content.author}
                 </Link> {" "}
                 under the{" "}
