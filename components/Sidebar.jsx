@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 const Sidebar = ({ docs }) => {
 
     const [rootNodes, setRootNodes] = useState([]);
-    const [nonRootNodes, setNonRootNodes] = useState([]);
+    const [nonRootNodes, setNonRootNodes] = useState({});
 
     const pathname = usePathname()
 
@@ -37,10 +37,33 @@ const Sidebar = ({ docs }) => {
         // i don't understand this // confused 
         const nonRoots = Object.groupBy(matchedDocs.filter(doc => doc.parent), ({ parent }) => parent)
 
-        console.log({ roots })
-        console.log({ nonRoots })
+
+        const nonRootsKeys = Reflect.ownKeys(nonRoots)
+        console.log(nonRootsKeys)
+        nonRootsKeys.forEach(key => {
+            const foundInRoots = roots.find(root => root.id === key)
+            if (!foundInRoots) {
+                const foundInDocs = docs.find(doc => doc.id === key)
+                roots.push(foundInDocs)
+            }
+        })
+
+        roots.sort((a, b) => {
+            if (a.order > b.order) {
+                return 1
+            }
+            if (b.order > a.order) {
+                return -1
+            } else {
+                return 0
+            }
+        })
+
+
         setRootNodes([...roots])
-        setNonRootNodes({...nonRoots})
+        setNonRootNodes({ ...nonRoots })
+
+
 
     }, [pathname])
 
@@ -71,7 +94,7 @@ const Sidebar = ({ docs }) => {
                                 {nonRootNodes[rootNode.id] &&
 
                                     <ul role="list"
-                                  
+
                                     >
                                         {
                                             nonRootNodes[rootNode.id].map((obj, idx) => (
