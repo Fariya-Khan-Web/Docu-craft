@@ -65,7 +65,7 @@ const Sidebar = ({ docs }) => {
 
 
 
-    }, [pathname])
+    }, [pathname, docs])
 
 
 
